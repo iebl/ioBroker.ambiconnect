@@ -14,6 +14,12 @@
 		// This is necessary for the automatic typing of the adapter config
 		"resolveJsonModule": true,
 
+		// @tsconfig/node20 setzt "types": ["node"] und schaltet damit die
+		// automatische Einbindung aller uebrigen Typpakete ab. Ohne mocha hier
+		// kennt die Typpruefung describe/it nicht - und sie laeuft in der
+		// Pipeline (ioBroker/testing-action-check), also faellt das dort auf.
+		"types": ["node", "mocha"],
+
 		// If you want to disable the stricter type checks (not recommended), uncomment the following line
 		// "strict": false,
 		// And enable some of those features for more fine-grained control
