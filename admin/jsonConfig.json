@@ -1,0 +1,108 @@
+{
+	"i18n": true,
+	"type": "tabs",
+	"items": {
+		"verbindung": {
+			"type": "panel",
+			"label": "Verbindung",
+			"items": {
+				"host": {
+					"type": "text",
+					"label": "Broker-Adresse",
+					"help": "Die Box selbst betreibt den Broker",
+					"newLine": true,
+					"xs": 12, "sm": 12, "md": 6, "lg": 4, "xl": 4
+				},
+				"port": {
+					"type": "number",
+					"label": "Port",
+					"min": 1, "max": 65535,
+					"xs": 12, "sm": 6, "md": 3, "lg": 2, "xl": 2
+				},
+				"username": {
+					"type": "text",
+					"label": "Benutzer",
+					"newLine": true,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				},
+				"password": {
+					"type": "password",
+					"label": "Kennwort",
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				},
+				"deviceTopic": {
+					"type": "text",
+					"label": "Basis-Topic",
+					"help": "Vorgabe: device/evCharger/0",
+					"newLine": true,
+					"xs": 12, "sm": 12, "md": 6, "lg": 4, "xl": 4
+				}
+			}
+		},
+		"steuerung": {
+			"type": "panel",
+			"label": "Steuerung",
+			"items": {
+				"warnung": {
+					"type": "staticText",
+					"text": "Diese Box vertraegt nur einen Regler. Laeuft daneben evcc oder das box-eigene ChargeControl, brechen Ladevorgaenge ab. Nur freigeben, wenn AMBIConnect die Leistung stellen soll.",
+					"newLine": true,
+					"xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12
+				},
+				"controlEnabled": {
+					"type": "checkbox",
+					"label": "Steuerung freigeben",
+					"newLine": true,
+					"xs": 12, "sm": 12, "md": 6, "lg": 4, "xl": 4
+				},
+				"minPowerW": {
+					"type": "number",
+					"label": "Kleinste Ladeleistung (W)",
+					"help": "Kleinere Werte beenden die Sitzung, statt sie zu drosseln",
+					"min": 100, "max": 5000,
+					"newLine": true,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				},
+				"rampFactor": {
+					"type": "number",
+					"label": "Rampenfaktor je Schritt",
+					"help": "0.9 = hoechstens 10 Prozent Absenkung je Intervall",
+					"min": 0.5, "max": 1,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				},
+				"rampIntervalMs": {
+					"type": "number",
+					"label": "Rampenintervall (ms)",
+					"min": 1000, "max": 60000,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				}
+			}
+		},
+		"messwerte": {
+			"type": "panel",
+			"label": "Messwerte",
+			"items": {
+				"hinweis": {
+					"type": "staticText",
+					"text": "Die Box sendet Spannung, Strom und Frequenz mehrfach je Sekunde. Ohne Entprellung entstehen Millionen Zustandsaenderungen am Tag.",
+					"newLine": true,
+					"xs": 12, "sm": 12, "md": 12, "lg": 12, "xl": 12
+				},
+				"measurementIntervalMs": {
+					"type": "number",
+					"label": "Mindestabstand (ms)",
+					"min": 0, "max": 300000,
+					"newLine": true,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				},
+				"measurementDeadband": {
+					"type": "number",
+					"label": "Totzone",
+					"help": "Aenderungen darunter werden nicht geschrieben",
+					"min": 0,
+					"xs": 12, "sm": 6, "md": 4, "lg": 3, "xl": 3
+				}
+			}
+		}
+	}
+}

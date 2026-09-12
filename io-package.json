@@ -1,0 +1,124 @@
+{
+  "common": {
+    "name": "ambiconnect",
+    "version": "0.0.1",
+    "news": {
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "uk": "Початкова версія",
+        "zh-cn": "首次出版"
+      }
+    },
+    "titleLang": {
+      "en": "AMBIConnect",
+      "de": "AMBIConnect",
+      "ru": "АМБИКоннект",
+      "pt": "AMBIConnect",
+      "nl": "AMBIConnect",
+      "fr": "AMBIConnect",
+      "it": "AMBIConnect",
+      "es": "AMBIConectar",
+      "pl": "AMBIConnect",
+      "uk": "AMBIConnect",
+      "zh-cn": "AMBI连接"
+    },
+    "desc": {
+      "en": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "de": "Ambibox ambiCHARGE Home - Messwerte und Steuerung über MQTT",
+      "ru": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "pt": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "nl": "Ambibox ambiCHARGE Home - Messwerte en besturing ueber MQTT",
+      "fr": "Ambibox ambiCHARGE Home - Messages et commandes via MQTT",
+      "it": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "es": "Ambibox ambiCHARGE Inicio - Messwerte und Steuerung ueber MQTT",
+      "pl": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "uk": "Ambibox ambiCHARGE Home - Messwerte und Steuerung ueber MQTT",
+      "zh-cn": "Ambibox ambiCHARGE 主页 - Messwerte 和 Steuerung ueber MQTT"
+    },
+    "authors": [
+      "huepfman <trammer@iebl.de>"
+    ],
+    "keywords": [
+      "ambibox",
+      "wallbox",
+      "mqtt",
+      "v2h",
+      "charging"
+    ],
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "ambiconnect.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/iebl/ioBroker.ambiconnect/main/admin/ambiconnect.png",
+    "readme": "https://github.com/iebl/ioBroker.ambiconnect/blob/main/README.md",
+    "loglevel": "info",
+    "tier": 3,
+    "mode": "daemon",
+    "type": "energy",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "push",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.0.23"
+      }
+    ],
+    "messagebox": false
+  },
+  "native": {
+    "host": "",
+    "port": 1883,
+    "username": "",
+    "password": "",
+    "deviceTopic": "device/evCharger/0",
+    "controlEnabled": false,
+    "minPowerW": 600,
+    "rampFactor": 0.8,
+    "rampIntervalMs": 5000,
+    "measurementIntervalMs": 5000,
+    "measurementDeadband": 10
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
