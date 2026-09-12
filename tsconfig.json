@@ -2,7 +2,7 @@
 {
 	// To update the compilation target, install a different version of @tsconfig/node... and reference it here
 	// https://github.com/tsconfig/bases#node-20-tsconfigjson
-	"extends": "@tsconfig/node20/tsconfig.json",
+	"extends": "@tsconfig/node22/tsconfig.json",
 	"compilerOptions": {
 		// do not compile anything, this file is just to configure type checking
 		"noEmit": true,
@@ -14,7 +14,7 @@
 		// This is necessary for the automatic typing of the adapter config
 		"resolveJsonModule": true,
 
-		// @tsconfig/node20 setzt "types": ["node"] und schaltet damit die
+		// @tsconfig/node22 setzt "types": ["node"] und schaltet damit die
 		// automatische Einbindung aller uebrigen Typpakete ab. Ohne mocha hier
 		// kennt die Typpruefung describe/it nicht - und sie laeuft in der
 		// Pipeline (ioBroker/testing-action-check), also faellt das dort auf.
