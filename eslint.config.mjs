@@ -9,7 +9,9 @@ export default [
 		ignores: [
 			'.dev-server/',
 			'.vscode/',
-			'*.test.js',
+			// Flat Config: '*.test.js' trifft nur das Wurzelverzeichnis, lib/x.test.js
+			// waere weiter erfasst - und dort kennt ESLint describe/it nicht.
+			'**/*.test.js',
 			'test/**/*.js',
 			'*.config.mjs',
 			'build',
