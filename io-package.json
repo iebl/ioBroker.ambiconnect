@@ -120,5 +120,11 @@
       },
       "native": {}
     }
+  ],
+  "protectedNative": [
+    "password"
+  ],
+  "encryptedNative": [
+    "password"
   ]
 }
